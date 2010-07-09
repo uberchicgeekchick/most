@@ -24,13 +24,3 @@ language governing rights and limitations under the RPL.
 */
 
 
-#ifndef _MOST_EDIT_H_
-# define _MOST_EDIT_H_
-
-
-extern void most_edit_cmd (void);
-extern char *most_escape_filename (char *file, char quote_char);
-
-#endif /* _MOST_EDIT_H_ */
-
-

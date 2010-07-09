@@ -22,7 +22,7 @@
 #include <ctype.h>
 
 #include <slang.h>
-#include "jdmacros.h"
+#include "slang-macros.h"
 
 #include "most.h"
 #include "keym.h"

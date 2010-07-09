@@ -1,22 +1,31 @@
 /*
  This file is part of MOST.
 
- Copyright (c) 1991, 1999, 2002, 2005, 2006, 2007 John E. Davis
+ most 5.0.0b and beyond are also:
+ Copyright (c) 2010 Kaity G. B. <uberChick@uberChicGeekChick.com>
+ Released under the terms of the RPL 1.5 or above.
 
- This program is free software; you can redistribute it and/or modify it
- under the terms of the GNU General Public License as published by the Free
- Software Foundation; either version 2 of the License, or (at your option)
- any later version.
+ most up to and including versions 5.0.0a are:
+ Copyright (c) 1991, 1999, 2002, 2005, 2006, 2007 John E. Davis <ftp://space.mit.edu/pub/davis/most/>
+ Relesed under the terms of the GPL 2 or above.
 
- This program is distributed in the hope that it will be useful, but WITHOUT
- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
- more details.
+Unless explicitly acquired and licensed from Licensor under another
+license, the contents of this file are subject to the Reciprocal Public
+License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
+and You may not copy or use this file in either source code or executable
+form, except in compliance with the terms and conditions of the RPL.
 
- You should have received a copy of the GNU General Public License along
- with this program; if not, write to the Free Software Foundation, Inc., 675
- Mass Ave, Cambridge, MA 02139, USA.
+All software distributed under the RPL is provided strictly on an "AS
+IS" basis, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, AND
+LICENSOR HEREBY DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT
+LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
+language governing rights and limitations under the RPL.
 */
+
+
+#ifndef _MOST_H_
+#define _MOST_H_
 #include "config.h"
 extern int Most_S_Opt;
 extern int Most_A_Opt;             /* automatically choose -b if necessary */
@@ -60,14 +69,19 @@ extern int Most_Tab_Width;
 # endif
 #endif
 
-/* FIXME: v2.x slang.h exports SLsnprintf */
+/* 2010-05-21: slang v2.x support for exported SLsnprintf added *
+ *         Kaity G. B. <uberChick@uberChicGeekChick.com>        */
 #ifdef HAVE_SNPRINTF
 # define _pSLsnprintf snprintf
 #else
-# if SLANG_VERSION < 20000
-#  define _pSLsnprintf _SLsnprintf
-# endif
+# if SLANG_VERSION > 20100 
+#  define _pSLsnprintf SLsnprintf
+# else
+#    if SLANG_VERSION < 20000
+#      define _pSLsnprintf _SLsnprintf
+#    endif
 extern int _pSLsnprintf (char *, unsigned int, char *, ...);
+# endif
 #endif
 
 #if SLANG_VERSION <= 10409
@@ -76,3 +90,4 @@ extern int SLang_set_error (int);
 #endif
 
 #define SLANG_REGEX 1
+#endif /* _MOST_H_ */

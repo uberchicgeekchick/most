@@ -29,7 +29,7 @@
 @src/mostconf.h
 @src/modules.lis
 @src/w32conf.h
-@src/jdmacros.h
+@src/slang-macros.h
 @src/main.c
 @src/buffer.c
 @src/file.c

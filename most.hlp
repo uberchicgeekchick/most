@@ -318,10 +318,14 @@
  a file.  When in doubt, use the -v and -b options of most.
 
 2 Author
-  John E. Davis
-  davis@space.mit.edu
+	Kaity G. B. <uberChick@uberchicgeekchick.com>
 
 2 Acknowledgements
+  most <= 5.0.0a writen by:
+  John E. Davis
+  davis@space.mit.edu
+  
+  -below are his comments & acknowledgements:
  I  would  like  to  thank  the users of most for valuable comments and
  criticisms.  I would especially like to thank  those  individuals  who
  have contributed code to most.
