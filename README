@@ -1,3 +1,8 @@
+This is a fork of most which fixes most so it now supports slang 2.x and
+above.  I hope to see my changes merged into most.  But in case its now
+or if it just takes a long while.  Either way: here it is :-D
+	- kaity g. b.
+
 Compiling MOST requires an ANSI C compiler.  In addition you MUST have
 a copy of the S-Lang library version 2.X.  Version 1 is nolonger
 supported.  This library is available from
